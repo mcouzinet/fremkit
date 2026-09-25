@@ -14,6 +14,14 @@ tagged `vX.Y.Z`.
 
 ### Added
 
+- **A window that lands on the Edge comes back.** Another application could place a window on the
+  Edge display, where the kiosk covers it: the window was focused, it took the keyboard, and it
+  was invisible, with nothing to click to get it back. Safari or the Finder restoring a frame
+  saved before the Edge was plugged in is enough to fall into it. The helper now moves any such
+  window back onto the display you work on, within two seconds, under the same switch that keeps
+  the mouse out. That switch is called *Edge fence* now, since it fences more than the pointer
+  (@mcouzinet, #7).
+
 - **Recent projects widget.** Lists the folders you worked in lately — git repositories under the
   folders you choose, plus, if you tick them, Claude Code, Codex, VS Code, Cursor, JetBrains IDEs,
   zoxide, tmux and Herdr — and opens one with a tap in Finder, a terminal, your editor (a
