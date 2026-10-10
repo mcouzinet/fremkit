@@ -26,6 +26,13 @@ tagged `vX.Y.Z`.
 
 ### Fixed
 
+- **The pointer no longer gets stranded on the Edge.** The fence only ever acted on a pointer
+  that moved, so a cursor warped there by an application, or left behind by a display being
+  rearranged, simply stayed: the next click or scroll went to the dashboard instead of the window
+  you were looking at. The fence now also checks where the pointer really is, five times a
+  second, and pushes it back. That half works even without the Accessibility grant, since moving
+  the cursor needs no permission (@mcouzinet, #9).
+
 - **The clipboard widget masks one-time codes.** A six-digit code copied from a text message or
   an authenticator (`482913`, `482 913`, `4829-1375`) showed in full on the Edge and on a paired
   iPad; any run of four to eight digits copied on its own is now shown as a secret, and still
